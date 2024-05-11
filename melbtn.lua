@@ -57,6 +57,16 @@ local function btncallback(btn)
         Outfitter_ExecuteCommand(cmd)
     elseif i == TOGGLEBB_BTN_ID then
         togglebb(btn)
+    elseif i == 5 then
+        local cmd = "wear NAXX_dps_saph"
+        display(cmd)
+        OutfitterStack_Clear()
+        Outfitter_ExecuteCommand(cmd)
+    elseif i == 6 then
+        local cmd = "wear NAXX_miti_4hm_backline"
+        display(cmd)
+        OutfitterStack_Clear()
+        Outfitter_ExecuteCommand(cmd)
     end
 end
 
@@ -135,6 +145,8 @@ melbtn:SetScript("OnEvent", function()
         createbtn(2, "udtrink")
         createbtn(3, "dpstrink")
         createbtn(TOGGLEBB_BTN_ID, "togglebb")
+        createbtn(5, "saph")
+        createbtn(6, "4hm")
     end
 
     Chronos.scheduleRepeating(INIT2_NAME, 1, melbtn_init2)
