@@ -67,6 +67,10 @@ local function btncallback(btn)
         display(cmd)
         OutfitterStack_Clear()
         Outfitter_ExecuteCommand(cmd)
+    elseif i == 7 then
+        display('need')
+        ChatFrame1Tab:Click()
+        SlashCmdList["TOPMEOFF"]('ls need')
     end
 end
 
@@ -147,6 +151,7 @@ melbtn:SetScript("OnEvent", function()
         createbtn(TOGGLEBB_BTN_ID, "togglebb")
         createbtn(5, "saph")
         createbtn(6, "4hm")
+        createbtn(7, "need")
     end
 
     Chronos.scheduleRepeating(INIT2_NAME, 1, melbtn_init2)
